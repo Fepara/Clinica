@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar Receita</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'financeiro/css/criar_receita.css' %}">
+</head>
+<body>
+    <h1>Registrar Receita</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'listar_receitas' %}">Voltar</a>
+</body>
+</html>

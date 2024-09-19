@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profissionais</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'profissionais/css/listar_profissionais.css' %}">
+</head>
+<body>
+    <h1>Lista de Profissionais</h1>
+    <ul>
+        {% for profissional in profissionais %}
+            <li>{{ profissional.nome }} - {{ profissional.especialidade }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cadastrar_profissional' %}">Cadastrar Novo Profissional</a>
+</body>
+</html>

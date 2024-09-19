@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agendamentos</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'agendamentos/css/listar_agendamentos.css' %}">
+</head>
+<body>
+    <h1>Lista de Agendamentos</h1>
+    <ul>
+        {% for agendamento in agendamentos %}
+            <li>
+                Paciente: {{ agendamento.paciente.nome }} - Profissional: {{ agendamento.profissional.nome }}<br>
+                Data: {{ agendamento.data }} - Hora: {{ agendamento.hora_inicio }} às {{ agendamento.hora_fim }}<br>
+                Observações: {{ agendamento.observacoes }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'criar_agendamento' %}">Criar Novo Agendamento</a>
+</body>
+</html>

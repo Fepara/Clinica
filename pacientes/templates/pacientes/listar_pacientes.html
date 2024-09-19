@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pacientes</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pacientes/css/listar_pacientes.css' %}">
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+    <ul>
+        {% for paciente in pacientes %}
+            <li>{{ paciente.nome }} - {{ paciente.telefone }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cadastrar_paciente' %}">Cadastrar Novo Paciente</a>
+</body>
+</html>

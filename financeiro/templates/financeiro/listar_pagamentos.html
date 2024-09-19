@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pagamentos</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'financeiro/css/listar_pagamentos.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Pagamentos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>Valor</th>
+                    <th>Data do Pagamento</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pagamento in pagamentos %}
+                <tr>
+                    <td>{{ pagamento.paciente.nome }}</td>
+                    <td>R$ {{ pagamento.valor }}</td>
+                    <td>{{ pagamento.data_pagamento|date:"d/m/Y" }}</td>
+                    <td>{{ pagamento.descricao }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'criar_pagamento' %}" class="btn">Registrar Novo Pagamento</a>
+    </div>
+</body>
+</html>

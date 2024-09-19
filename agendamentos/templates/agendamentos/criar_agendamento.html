@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criar Agendamento</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'agendamentos/css/criar_agendamentos.css' %}">
+</head>
+<body>
+    <h1>Criar Agendamento</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'listar_agendamentos' %}">Voltar</a>
+</body>
+</html>

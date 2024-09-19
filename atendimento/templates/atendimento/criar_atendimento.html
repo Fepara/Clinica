@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar Atendimento</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'atendimento/css/criar_atendimento.css' %}">
+</head>
+<body>
+    <h1>Registrar Atendimento</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'listar_atendimentos' %}">Voltar</a>
+</body>
+</html>

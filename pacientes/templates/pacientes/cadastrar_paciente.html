@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar Paciente</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pacientes/css/cadastrar_pacientes.css' %}">
+</head>
+<body>
+    <h1>Cadastrar Paciente</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'listar_pacientes' %}">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receitas</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'financeiro/css/listar_receitas.css' %}">
+</head>
+<body>
+    <h1>Lista de Receitas</h1>
+    <ul>
+        {% for receita in receitas %}
+            <li>
+                Descrição: {{ receita.descricao }}<br>
+                Valor: R$ {{ receita.valor }}<br>
+                Data da Receita: {{ receita.data_receita }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'criar_receita' %}">Registrar Nova Receita</a>
+</body>
+</html>

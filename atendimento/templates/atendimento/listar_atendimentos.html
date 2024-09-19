@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atendimentos</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'atendimento/css/listar_atendimentos.css' %}">
+</head>
+<body>
+    <h1>Lista de Atendimentos</h1>
+    <ul>
+        {% for atendimento in atendimentos %}
+            <li>
+                Paciente: {{ atendimento.agendamento.paciente.nome }}<br>
+                Data do Atendimento: {{ atendimento.data_atendimento }}<br>
+                Notas: {{ atendimento.notas }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'criar_atendimento' %}">Registrar Novo Atendimento</a>
+</body>
+</html>

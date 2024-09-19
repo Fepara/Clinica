@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastrar Profissional</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'profissionais/css/cadastrar_profissional.css' %}">
+</head>
+<body>
+    <h1>Cadastrar Profissional</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'listar_profissionais' %}">Voltar</a>
+</body>
+</html>

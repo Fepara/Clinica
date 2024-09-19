@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Despesas</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'financeiro/css/listar_despesas.css' %}">
+</head>
+<body>
+    <h1>Lista de Despesas</h1>
+    <ul>
+        {% for despesa in despesas %}
+            <li>
+                Descrição: {{ despesa.descricao }}<br>
+                Valor: R$ {{ despesa.valor }}<br>
+                Data da Despesa: {{ despesa.data_despesa }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'criar_despesa' %}">Registrar Nova Despesa</a>
+</body>
+</html>
